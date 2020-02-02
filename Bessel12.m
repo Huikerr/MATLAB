@@ -1,0 +1,12 @@
+clear,clc;
+c=0:0.01:10;
+c1=0:0.01:10;
+c1(1)=[];
+y=besselj(1,c).*besselj(2,c);
+y1=diff(y);
+subplot(411),plot(c,y,'r',c1,y1,'b');
+subplot(412),plot(c,besselj(1,c),'r',c,besselj(2,c),'b')
+subplot(413),plot(c,besselj(1,c)./besselj(2,c))
+subplot(414),plot(c,besselj(0,c),c,besselj(1,c),c,besselj(2,c),c,besselj(3,c),c,besselj(4,c),c,besselj(5,c),c,besselj(6,c),c,besselj(7,c))
+[m,n]=findpeaks(y);
+c(n(1));
